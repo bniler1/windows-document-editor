@@ -1,0 +1,7 @@
+node_modules/
+dist/
+release/
+*.traineddata
+.env
+.env.local
+*.log

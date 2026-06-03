@@ -1,0 +1,109 @@
+.ann-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 13px;
+}
+
+.ann-tool-buttons {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.ann-tool-buttons button {
+  padding: 5px 12px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background: #fafafa;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.1s;
+}
+.ann-tool-buttons button:hover { background: #e8e8e8; }
+.ann-tool-buttons button.active {
+  background: #0066cc;
+  color: #fff;
+  border-color: #0066cc;
+}
+.ann-tool-buttons button[aria-pressed="true"] {
+  background: #dce8f7;
+  border-color: #0066cc;
+  color: #0055aa;
+}
+
+.ann-options {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 8px 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+}
+
+.ann-options label { font-size: 12px; font-weight: 500; }
+.ann-options input[type="text"],
+.ann-options textarea {
+  padding: 4px 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 12px;
+  width: 100%;
+}
+.ann-options textarea { resize: vertical; min-height: 60px; }
+.ann-options input[type="range"] { width: 120px; }
+.ann-options input[type="color"] { width: 40px; height: 28px; border: 1px solid #bbb; border-radius: 3px; cursor: pointer; padding: 1px; }
+
+.color-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.1s;
+}
+.color-swatch.selected { border-color: #0066cc; }
+.color-swatch:hover { border-color: #666; }
+
+.btn-apply, .btn-redact, .btn-danger-action {
+  padding: 5px 14px;
+  font-size: 12px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #fafafa;
+}
+.btn-apply { background: #e8f5e9; border-color: #a5d6a7; }
+.btn-redact { background: #fce4ec; border-color: #f48fb1; }
+.btn-danger-action { background: #c0392b; color: #fff; border-color: #c0392b; }
+.btn-danger-action:disabled { opacity: 0.5; }
+
+.ann-hint { font-size: 11px; color: #666; font-style: italic; }
+
+.ann-action-row { display: flex; gap: 6px; width: 100%; }
+
+.ann-export-row {
+  display: flex;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px solid #eee;
+}
+.ann-export-row .btn-sm {
+  padding: 4px 12px;
+  font-size: 12px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background: #fafafa;
+  cursor: pointer;
+}
+
+.ann-status {
+  font-size: 12px;
+  color: #27ae60;
+  padding: 3px 0;
+}
