@@ -83,6 +83,26 @@ contextBridge.exposeInMainWorld('pageApi', pageApi)
 contextBridge.exposeInMainWorld('ocrApi', ocrApi)
 contextBridge.exposeInMainWorld('pdfApi', pdfApi)
 contextBridge.exposeInMainWorld('annApi', annApi)
+const pdfImportApi = {
+  start: (req: {
+    pdfPath?: string; password?: string; mode?: string
+    pageRange?: { start: number; end: number }
+    ocrEnabled?: boolean; preservePageBreaks?: boolean
+    detectLists?: boolean; reconstructTables?: boolean
+  }) => ipcRenderer.invoke('pdfImport:start', req),
+  cancel: (jobId: string) => ipcRenderer.invoke('pdfImport:cancel', jobId),
+  listJobs: (limit?: number, offset?: number) => ipcRenderer.invoke('pdfImport:listJobs', limit, offset),
+  getJob: (jobId: string) => ipcRenderer.invoke('pdfImport:getJob', jobId),
+  getMetrics: (jobId: string) => ipcRenderer.invoke('pdfImport:getMetrics', jobId),
+  getAnomalies: (jobId: string) => ipcRenderer.invoke('pdfImport:getAnomalies', jobId),
+  deleteJob: (jobId: string) => ipcRenderer.invoke('pdfImport:deleteJob', jobId),
+  onProgress: (cb: (data: unknown) => void) => {
+    ipcRenderer.on('pdf:importProgress', (_e, d) => cb(d))
+    return () => ipcRenderer.removeAllListeners('pdf:importProgress')
+  },
+}
+
+contextBridge.exposeInMainWorld('pdfImportApi', pdfImportApi)
 contextBridge.exposeInMainWorld('fileApi', fileApi)
 
 export type PageApi = typeof pageApi

@@ -7,6 +7,7 @@ import { registerSplitMergeHandlers } from './ipc/splitMergeHandlers'
 import { registerCompressHandlers } from './ipc/compressHandlers'
 import { registerAnnotationHandlers } from './ipc/annotationHandlers'
 import { registerFileHandlers } from './ipc/fileHandlers'
+import { registerPdfImportHandlers } from './ipc/pdfImportHandlers'
 
 const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged
 
@@ -41,6 +42,7 @@ app.whenReady().then(() => {
   registerCompressHandlers()
   registerAnnotationHandlers()
   registerFileHandlers()
+  registerPdfImportHandlers()
   createWindow()
 
   app.on('activate', () => {

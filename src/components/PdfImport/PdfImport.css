@@ -1,0 +1,73 @@
+.import-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+}
+
+.import-dialog {
+  background: #fff; border-radius: 8px;
+  width: 480px; max-width: 95vw;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  display: flex; flex-direction: column;
+  max-height: 90vh; overflow: hidden;
+}
+
+.import-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.import-header h2 { margin: 0; font-size: 16px; font-weight: 600; }
+.import-close { background: none; border: none; cursor: pointer; font-size: 18px; color: #666; padding: 2px 6px; }
+
+.import-body { padding: 16px 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
+
+.import-field { display: flex; flex-direction: column; gap: 5px; font-size: 13px; }
+.import-field > label:first-child { font-weight: 600; color: #333; }
+.import-field select { padding: 6px 8px; border: 1px solid #bbb; border-radius: 4px; font-size: 13px; }
+.import-file-row { display: flex; align-items: center; gap: 8px; }
+.import-file-name { flex: 1; font-size: 12px; color: #555; background: #f5f5f5; padding: 4px 8px; border-radius: 3px; border: 1px solid #ddd; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.import-range-row { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
+.import-range-row input { width: 60px; padding: 4px 6px; border: 1px solid #bbb; border-radius: 3px; font-size: 13px; }
+
+.import-checkboxes { gap: 7px; }
+.import-checkboxes label { display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 13px; }
+
+.import-actions { display: flex; justify-content: flex-end; gap: 8px; padding-top: 4px; }
+.btn-cancel { padding: 8px 18px; border: 1px solid #bbb; border-radius: 4px; background: #fafafa; cursor: pointer; font-size: 13px; }
+.btn-cancel:hover { background: #e8e8e8; }
+.btn-primary-action { padding: 8px 20px; background: #0066cc; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; }
+.btn-primary-action:hover:not(:disabled) { background: #0055aa; }
+.btn-primary-action:disabled { opacity: 0.5; cursor: default; }
+.btn-sm { padding: 4px 10px; font-size: 12px; border: 1px solid #bbb; border-radius: 3px; background: #fafafa; cursor: pointer; }
+.btn-link { background: none; border: none; color: #0066cc; cursor: pointer; font-size: 12px; text-decoration: underline; }
+
+.import-info { font-size: 13px; color: #555; }
+.import-attempt-warn { font-size: 12px; color: #c0392b; min-height: 16px; }
+.import-password-input { padding: 8px; border: 1px solid #bbb; border-radius: 4px; font-size: 14px; width: 100%; }
+
+.import-state-label { font-size: 13px; color: #555; text-align: center; }
+.import-progress-wrap { height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; }
+.import-progress-bar { height: 100%; background: #0066cc; border-radius: 4px; transition: width 0.3s ease; }
+.import-progress-stats { font-size: 11px; color: #888; text-align: center; }
+.btn-cancel-import { align-self: center; padding: 5px 16px; border: 1px solid #e0e0e0; border-radius: 4px; background: #fafafa; cursor: pointer; font-size: 12px; color: #666; }
+
+.import-success { display: flex; gap: 12px; align-items: flex-start; background: #e8f5e9; border-radius: 6px; padding: 12px; }
+.import-success-icon { font-size: 24px; color: #27ae60; }
+.import-success strong { display: block; font-size: 14px; margin-bottom: 4px; }
+.import-success p { font-size: 12px; color: #555; margin: 0; }
+
+.import-anomaly-count { font-size: 12px; color: #664d03; background: #fff3cd; padding: 6px 10px; border-radius: 4px; display: flex; align-items: center; gap: 8px; }
+.import-report { max-height: 160px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px; }
+.import-anomaly { display: flex; gap: 8px; padding: 5px 10px; font-size: 12px; border-bottom: 1px solid #f0f0f0; }
+.import-anomaly:last-child { border-bottom: none; }
+.import-anomaly-badge { font-size: 10px; padding: 1px 5px; border-radius: 3px; font-weight: 600; white-space: nowrap; align-self: center; }
+.import-anomaly-warning .import-anomaly-badge { background: #fff3cd; color: #856404; }
+.import-anomaly-error .import-anomaly-badge { background: #f8d7da; color: #721c24; }
+.import-anomaly-info .import-anomaly-badge { background: #d1ecf1; color: #0c5460; }
+
+.import-error { display: flex; gap: 12px; align-items: flex-start; background: #fff5f5; border-radius: 6px; padding: 12px; }
+.import-error-icon { font-size: 24px; color: #c0392b; }
+.import-error strong { display: block; font-size: 14px; margin-bottom: 4px; }
+.import-error p { font-size: 12px; color: #666; margin: 0; }
